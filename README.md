@@ -22,4 +22,4 @@ Her følger en forklaring til filstrukturen.
 | /Assets/js     | Mappe til alle vores javascript filer    |
 | /Assets/js/Components | Genbrugelige kodeblokke eller byggesten, der indeholder både udseende og funktionalitet.    |
 | /Assets/js/Utils/ | Forkortelse for *utilities* og er hjælpefunktioner eller værktøjer, der gør det lettere at udføre bestemte opgaver. Eksempelvis dato og api funktioner.
-| /Assets/js/bundles.js | Samling af filer eller moduler, der er blevet kombineret og optimeret til at danne en enkelt fil.
+| /Assets/js/bundles.js | Samling af JS moduler. Betyder at man kun skal kalde en fil fra sin HTML side.
