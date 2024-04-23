@@ -1,10 +1,11 @@
 import { myFetch } from "../Utils/apiUtils.js"
-import { getFriendlyPollName, getPollImage } from "../Utils/customUtils.js"
+import { getFriendlyPollName, getLocation, getPollImage } from "../Utils/customUtils.js"
 
 /**
  * Function to get the current pollen data
  */
 export const myPollList = async () => {
+	const location = await getLocation()
 	// Fetch data from the API
 	const endpoint = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=52.52&longitude=13.41&current=alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,olive_pollen,ragweed_pollen&hourly=alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,olive_pollen,ragweed_pollen&timezone=Europe%2FBerlin&forecast_days=1`
 	const result = await myFetch(endpoint)

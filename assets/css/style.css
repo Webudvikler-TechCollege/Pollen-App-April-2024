@@ -10,13 +10,21 @@ body {
 main ul {
   padding: 0px;
   margin: 0px;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 main ul li {
   display: grid;
+  padding: 1rem;
+  border-radius: 4px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  background-color: aliceblue;
+  margin-bottom: 1rem;
+}
+main ul li div {
+  background-color: aliceblue;
 }
 main ul li :first-child {
   grid-row-start: -1;
@@ -24,8 +32,5 @@ main ul li :first-child {
 }
 main ul li img {
   width: 100%;
-  max-width: 50px;
-}
-main ul li * {
-  border: solid 1px #000;
+  max-width: 100px;
 }/*# sourceMappingURL=style.css.map */

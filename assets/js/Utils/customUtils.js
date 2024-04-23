@@ -1,3 +1,5 @@
+import { myFetch } from "./apiUtils.js"
+
 export const getFriendlyPollName = name => {
 	const friendlyNames = {
 		"alder_pollen": "El",
@@ -22,4 +24,30 @@ export const getPollImage = name => {
 	}
 
 	return pollImages[name]
+}
+
+export const getLocation = () => {
+	return new Promise((resolve, reject) => {
+		if("geolocation" in navigator) {
+			navigator.geolocation.getCurrentPosition(async position => {
+				const location = {
+					latitude: position.coords.latitude,
+					longitude: position.coords.longitude
+				}
+				const streetmapdata = await getCityFromCoords(location.latitude, location.longitude);
+				location.city = streetmapdata.address.city;
+				resolve(location)
+			},
+			error => {
+				console.error(error)
+				reject(error)
+			})
+		} else {
+			console.error("Geolocation not available")
+		}
+	})
+}
+
+export const getCityFromCoords = async (latitude, longitude) => {
+	return await myFetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
 }

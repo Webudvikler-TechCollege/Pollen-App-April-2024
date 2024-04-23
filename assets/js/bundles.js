@@ -1,4 +1,4 @@
-import { myLocations } from './components/myLocations.js'
-import { myPollList } from './components/myPollList.js'
+import { myLocations } from './Components/myLocations.js'
+import { myPollList } from './Components/myPollList.js'
 myLocations()
 myPollList()
